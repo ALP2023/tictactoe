@@ -7,6 +7,7 @@ Modular programming is coding in manageable blocks (i.e. modules) and is importa
 2. How can you import only a specific function or class from a module in Python? What is the syntax for this?
 
 A module in Python is a file containing Python definitions and statements. Save your modular code (defined function e.g. def x()) as a .py file, e.g. module.py. Then import it to the program (i.e. import module_name) and call the module function as module_name.function.
+For example:
 
 import module.py
 
@@ -26,7 +27,7 @@ items = ["original"]
 modify_list(items)
 print(items)
 
-
+Output is ['original', 'new']. modify_list function appends the item "new" to the list
 
 5. In Python even though variables created within a function are local, there are still situations where you can modify data outside the scope with a local variable. Explain this anomaly and relate it to both mutability and pass by reference.
 

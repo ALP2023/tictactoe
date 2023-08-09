@@ -11,7 +11,7 @@ class TicTacO:
         self.current_player = self.p1
 
     def check_win(self):
-        ''' Check for win conditions and return the winner or None '''
+        ''' Check for win conditions and return the winner or None based on 1D structure'''
         win_conditions = [(0,1,2), (3,4,5), (6,7,8), (0,3,6), (1,4,7), (2,5,8), (0,4,8), (2,4,6)]
         for wc in win_conditions:
             if self.board[wc[0]] == self.board[wc[1]] == self.board[wc[2]] != self.empty:
