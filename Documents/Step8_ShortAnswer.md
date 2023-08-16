@@ -15,7 +15,9 @@ module.x(value)
 
 3. How would you explain Python's parameter-passing mechanism? Is it more similar to pass-by-value or pass-by-reference? Justify your answer.
 
+Python's parameter-passing mechanism is neither to pass-by-value nor pass-by-reference as it is in reality better describe as call-by-object-reference, because python calls immutable objects as pass-by-value (can’t be modified in situ), whereas mutable objects are similar to pass-by-reference (changes can be made within the function).
 
+Reference: https://net-informations.com/python/iq/arguments.htm 
 
 4. Given the following Python code, what will be the output and why?
 
@@ -31,7 +33,7 @@ Output is ['original', 'new']. modify_list function appends the item "new" to th
 
 5. In Python even though variables created within a function are local, there are still situations where you can modify data outside the scope with a local variable. Explain this anomaly and relate it to both mutability and pass by reference.
 
-
+When passing an argument to a function, Python passes a reference to the object rather than the actual object itself. So, when modifying a mutable local variable (e.g. list) within a function, it’s actually modifying the object that is reference and not the variable, therefor changes that is made to the object’s content will affect the object irrespective of whether it is a local or global variable. Not this this is only possible for mutable objects. Reassignment of immutable objects (e.g. strings or numbers) within the function creates a new list, and will remain uncharged outside the function.
 
 6. List two benefits of modular coding approaches. How do these benefits assist in the development of medium-sized applications?
 
