@@ -1,24 +1,38 @@
-'''
-Print a game board using a 3x3 grid format
-'''
-#
-#
-# # by calculating indices explicitly - still in 1d structure
-# def display_board_3x3(board):
-#
-#     for i in range(3):
-#         print(board[i * 3], "|", board[i * 3 + 1], "|", board[i * 3 + 2])
-#         if i < 2:
-#             print("---------")
-#
 
-'''
-Print a game board using a undefined grid format in 2D data structure
-'''
-def print_board(board):
-    rows = [board[i:i + 3] for i in range(0, 9, 3)]
-    board_str = "\n_________\n".join(" | ".join(row) for row in rows)
-    print(board_str)
+def print_board(board, rows, cols):
+    '''
+    Print a square game board using a 2D data structure
+    '''
+    for i in range(rows):
+        row = board[i * cols:i * cols + cols]
+        for j in range(len(row)):
+            print(row[j], end="")
+            if j < rows-1:
+                print(" | ", end="")
+        print()
+        if i < rows-1:
+            print("-" * (cols * 4 - 1))  # Print horizontal line
+
+def create_board(rows, cols):
+    return [[" " for _ in range(cols)] for _ in range(rows)]
+
+def get_user_board_size():
+    '''
+    Get the desired board size between 3 and 20 from the user.
+
+    Returns:
+        rows, cols (int, int): The number of rows and columns for the game board.
+    '''
+    while True:
+        try:
+            rows = int(input("Enter your desired board size: "))
+            cols = rows
+            if 3 <= rows <= 20:
+                return rows, cols
+            else:
+                print("Board size must be between 3 and 20.")
+        except ValueError:
+            print("Invalid input. Please enter a number > 2.")
 
 
 

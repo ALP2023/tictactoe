@@ -15,7 +15,7 @@ module.x(value)
 
 3. How would you explain Python's parameter-passing mechanism? Is it more similar to pass-by-value or pass-by-reference? Justify your answer.
 
-Python's parameter-passing mechanism is neither to pass-by-value nor pass-by-reference as it is in reality better describe as call-by-object-reference, because python calls immutable objects as pass-by-value (can’t be modified in situ), whereas mutable objects are similar to pass-by-reference (changes can be made within the function).
+Python's parameter-passing mechanism is neither pass-by-value nor pass-by-reference as it is in reality better describe as call-by-object-reference, because python calls immutable objects as pass-by-value (can’t be modified in situ), whereas mutable objects are similar to pass-by-reference (changes can be made within the function).
 
 Reference: https://net-informations.com/python/iq/arguments.htm 
 
@@ -29,7 +29,7 @@ items = ["original"]
 modify_list(items)
 print(items)
 
-Output is ['original', 'new']. modify_list function appends the item "new" to the list
+Output is ["original", "new"], because the modify_list function appends the item "new" to the list, then reassigned a new list. That means whatever happens within the function stays in the function and doesn’t affect the list passed into it. So “original” is passed into the function, which then appends “new” to the list, hence the output is ["original", "new"]. 
 
 5. In Python even though variables created within a function are local, there are still situations where you can modify data outside the scope with a local variable. Explain this anomaly and relate it to both mutability and pass by reference.
 

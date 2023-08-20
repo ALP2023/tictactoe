@@ -25,7 +25,7 @@ Module vs Classes: module = file containing related code and data that executes 
     o	use 2D data structure
     o	print the board in a 3x3 grid
 
-Research: python - How do I create 3x3 matrices? - Stack Overflow & Python | Using 2D arrays/lists the right way - GeeksforGeeks.
+Research: python - https://stackoverflow.com/questions/28205805/how-do-i-create-3x3-matrices & https://www.geeksforgeeks.org/python-using-2d-arrays-lists-the-right-way/.
 
 •	Game (similar to Smiley assessment)
 
